@@ -33,5 +33,5 @@ Configuration Parameters&#xD;
   <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Initial superuser password (required)" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
   <Config Name="Database Storage Path (Appdata)" Target="/home/postgres/pgdata/data" Default="/mnt/user/appdata/timescaledb-ha" Mode="rw" Description="PostgreSQL data storage location" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/timescaledb</Config>
   <Config Name="TimescaleDB access port" Target="5432" Default="5432" Mode="tcp" Description="TCP connection port mapped to 65432 from 5432 in case of other postgres container present" Type="Port" Display="always-hide" Required="true" Mask="null">65432</Config>
-  <TailscaleStateDir/>
+  <Config Name="DATA_DIR" Target="PGDATA" Default="/var/lib/postgresql/data" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">/var/lib/postgresql/data</Config>  <TailscaleStateDir/>
 </Container>
