@@ -19,6 +19,7 @@ Configuration Parameters&#xD;
     Database Storage Path (Appdata) - the directory where TimescaleDB stores its application data and configuration files. &#xD;
 &#xD;
     TimescaleDB access port - the listening port the database server accepts TCP/IP connections.&#xD;
+</Overview>
   <Category>Productivity: Tools: Network:Management</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/glls/Docker-Templates-Unraid/refs/heads/main/timescaledb.xml</TemplateURL>
