@@ -1,25 +1,24 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>TimescaleDB-HA</Name>
-  <Repository>timescale/timescaledb-ha:pg17</Repository>
-  <Registry>https://hub.docker.com/r/timescale/timescaledb-ha</Registry>
+  <Name>TimescaleDB</Name>
+  <Repository>timescale/timescaledb:latest-pg17</Repository>
+  <Registry>https://hub.docker.com/r/timescale/timescaledb</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://forums.unraid.net/topic/188959-timescaledb-support-thread/</Support>
+  <Support/>
   <Project>https://docs.timescale.com/self-hosted/latest/install/installation-docker/</Project>
-  <Overview>TimescaleDB is an open-source PostgreSQL extension designed for running real-time analytics on time-series data. It is engineered up from PostgreSQL and maintains full SQL support.&#xD;
-The TimescaleDB HA Docker image offers the most complete TimescaleDB experience. It uses Ubuntu, includes TimescaleDB Toolkit, and support for PostGIS, Patroni and pgvector. &#xD;
+  <Overview>The lighter-weight TimescaleDB non-ha image uses Alpine&#xD;
 TimescaleDB is pre-created in the default PostgreSQL database. By default, TimescaleDB is added to any new database you create.&#xD;
 &#xD;
 Configuration Parameters&#xD;
 &#xD;
-    POSTGRES_PASSWORD - superuser password.  Default user and password are both "postgres".&#xD;
+    POSTGRES_PASSWORD - superuser password. Default user and password are both "postgres".&#xD;
 &#xD;
-    Database Storage Path (Appdata) - the directory where TimescaleDB stores its application data and configuration files.&#xD;
+    Database Storage Path (Appdata) - the directory where TimescaleDB stores its application data and configuration files. &#xD;
 &#xD;
-    TimescaleDB access port - the listening port the database server accepts TCP/IP connections,</Overview>
+    TimescaleDB access port - the listening port the database server accepts TCP/IP connections.&#xD;
   <Category>Productivity: Tools: Network:Management</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/glls/Docker-Templates-Unraid/refs/heads/main/timescaledb.xml</TemplateURL>
@@ -27,11 +26,12 @@ Configuration Parameters&#xD;
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
+  <DateInstalled>1743960490</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
   <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Initial superuser password (required)" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
-  <Config Name="Database Storage Path (Appdata)" Target="/var/lib/postgresql/data" Default="/mnt/user/appdata/postgresql_immich" Mode="rw" Description="PostgreSQL data storage location" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/timescaledb-ha</Config>
+  <Config Name="Database Storage Path (Appdata)" Target="/var/lib/postgresql/data" Default="/mnt/user/appdata/timescaledb" Mode="rw" Description="PostgreSQL data storage location" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/timescaledb</Config>
   <Config Name="TimescaleDB access port" Target="5432" Default="5432" Mode="tcp" Description="TCP connection port mapped to 65432 from 5432 in case of other postgres container present" Type="Port" Display="always-hide" Required="true" Mask="null">65432</Config>
   <TailscaleStateDir/>
 </Container>
