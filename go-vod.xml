@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>go-vod</Name>
+  <Repository>radialapps/go-vod:latest</Repository>
+  <Registry>https://hub.docker.com/r/radialapps/go-vod/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Project>https://hub.docker.com/r/radialapps/go-vod/</Project>
+  <Overview>UNRAID Docker based transcoder for Nextcloud Memories &#xD;
+&#xD;
+Links&#xD;
+https://memories.gallery/&#xD;
+https://memories.gallery/hw-transcoding/&#xD;
+</Overview>
+  <Category>Productivity: MediaServer:Video</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/glls/Docker-Templates-Unraid/refs/heads/main/go-vod.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/glls/Docker-Templates-Unraid/refs/heads/main/assets/memories.png</Icon>
+  <ExtraParams>--runtime nvidia</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Port" Target="47788" Default="47788" Mode="tcp" Description="Listening port" Type="Port" Display="always" Required="false" Mask="false">47788</Config>
+  <Config Name="NVIDIA driver caps" Target="NVIDIA_DRIVER_CAPABILITIES" Default="compute,video,utility" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">compute,video,utility</Config>
+  <Config Name="Nextcloud Host" Target="NEXTCLOUD_HOST" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">http://192.168.33.5:8060</Config>
+  <Config Name="nc data" Target="/ncdata" Default="/mnt/user/appdata/nextcloud" Mode="ro" Description="Nextcloud app data dir" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nextcloud</Config>
+  <Config Name="data" Target="/var/www/html/data/" Default="/mnt/user/appdata/nextcloud/data/" Mode="ro" Description="Nextcloud user data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/nextcloud/data/</Config>
+  <Config Name="/dev/dri" Target="/dev/dri" Default="" Mode="" Description="" Type="Device" Display="advanced" Required="false" Mask="false">/dev/dri</Config>
+  <Config Name="NEXTCLOUD_ALLOW_INSECURE" Target="NEXTCLOUD_ALLOW_INSECURE" Default="0" Mode="" Description="If you are using a self-signed certificate or http, you set to 1" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <TailscaleStateDir/>
+</Container>

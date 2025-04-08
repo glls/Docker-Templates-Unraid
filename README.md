@@ -4,6 +4,7 @@ UNRAID Docker templates
 
 - TimescaleDB
 - TimescaleDB-HA
+- go-vod
 
 ## Notes
 

@@ -9,7 +9,8 @@
   <Privileged>false</Privileged>
   <Support/>
   <Project>https://docs.timescale.com/self-hosted/latest/install/installation-docker/</Project>
-  <Overview>The lighter-weight TimescaleDB non-ha image uses Alpine&#xD;
+  <Overview>TimescaleDB is an open-source PostgreSQL extension designed for running real-time analytics on time-series data. It is engineered up from PostgreSQL and maintains full SQL support.&#xD;
+The lighter-weight TimescaleDB non-ha image uses Alpine&#xD;
 TimescaleDB is pre-created in the default PostgreSQL database. By default, TimescaleDB is added to any new database you create.&#xD;
 &#xD;
 Configuration Parameters&#xD;
@@ -27,12 +28,11 @@ Configuration Parameters&#xD;
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1743960490</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
   <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Initial superuser password (required)" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
   <Config Name="Database Storage Path (Appdata)" Target="/var/lib/postgresql/data" Default="/mnt/user/appdata/timescaledb" Mode="rw" Description="PostgreSQL data storage location" Type="Path" Display="always" Required="true" Mask="null">/mnt/user/appdata/timescaledb</Config>
-  <Config Name="TimescaleDB access port" Target="5432" Default="5432" Mode="tcp" Description="TCP connection port mapped to 65432 from 5432 in case of other postgres container present" Type="Port" Display="always-hide" Required="true" Mask="null">65432</Config>
+  <Config Name="TimescaleDB access port" Target="5432" Default="5432" Mode="tcp" Description="TCP connection port" Type="Port" Display="always-hide" Required="true" Mask="null">65432</Config>
   <TailscaleStateDir/>
 </Container>
