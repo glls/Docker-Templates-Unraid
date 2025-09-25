@@ -26,17 +26,7 @@ Below is a list of the Docker templates currently available, along with links to
 
 ---
 
-### 3. Calibre Server
-
-- **Description:** Calibre Server is a lightweight, server-only distribution of Calibre that provides web-based access to your ebook library. This image contains only the calibre-server component, making it faster, smaller, and more efficient than full Calibre installations. Perfect for headless server deployments.
-- **Official Website:** [calibre-ebook.com](https://calibre-ebook.com/)
-- **Server Documentation:** [manual.calibre-ebook.com/generated/en/calibre-server.html](https://manual.calibre-ebook.com/generated/en/calibre-server.html)
-- **Docker Image:** [hub.docker.com/r/glls/calibre-server](https://hub.docker.com/r/glls/calibre-server)
-- **Docker Build Files:** See the `docker/` folder for Dockerfile and build scripts
-
----
-
-### 4. go-vod
+### 4. go-vod (not using it anymore)
 
 - **Description:** go-vod is a Extremely minimal on-demand video transcoding server in go.
 - **Documentation:** [https://memories.gallery/hw-transcoding/#overview](https://memories.gallery/hw-transcoding/#overview)
