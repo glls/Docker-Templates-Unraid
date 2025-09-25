@@ -18,13 +18,6 @@ Features:&#xD;
 • Search and browse capabilities&#xD;
 • Download books in various formats&#xD;
 • Lightweight server-only installation&#xD;
-&#xD;
-Configuration:&#xD;
-• Library Path: Directory containing your Calibre library&#xD;
-• Server Port: Web interface access port (default: 27020)&#xD;
-• User/Group ID: For proper file permissions&#xD;
-&#xD;
-Access your library at: http://YOUR-SERVER-IP:27020&#xD;
 </Overview>
   <Category>MediaServer:Books</Category>
   <WebUI>http://[IP]:[PORT:27020]/</WebUI>
@@ -36,18 +29,10 @@ Access your library at: http://YOUR-SERVER-IP:27020&#xD;
   <DonateText>If you find this template useful, consider supporting the developer</DonateText>
   <DonateLink>https://www.paypal.me/GeorgeLitos</DonateLink>
   <Requires/>
-  
-  <!-- Port Configuration -->
-  <Config Name="WebUI Port" Target="27020" Default="27020" Mode="tcp" Description="Port for accessing the Calibre web interface" Type="Port" Display="always" Required="true" Mask="false">27020</Config>
-  
-  <!-- Volume Configuration -->
-  <Config Name="Calibre Library" Target="/library" Default="/mnt/user/Media/Books/Calibre-Library" Mode="rw" Description="Path to your existing Calibre library directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/Books/Calibre-Library</Config>
-  
-  <!-- Environment Variables -->
+  <Config Name="WebUI" Target="27020" Default="27020" Mode="tcp" Description="Port for accessing the Calibre web interface" Type="Port" Display="always" Required="true" Mask="false">27020</Config>  
+  <Config Name="Libraries" Target="/library" Default="/mnt/user/calibre/" Mode="rw" Description="Path to your existing Calibre libraries directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/calibre/</Config>
+  <Config Name="Appdata" Target="/home/calibre" Default="/mnt/user/appdata/calibre-server" Mode="rw" Description="Where calibre should store its database and library." Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/calibre/</Config>
   <Config Name="PUID" Target="CALIBRE_USER_ID" Default="99" Mode="" Description="User ID for file permissions (typically 99 for nobody on Unraid)" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="CALIBRE_GROUP_ID" Default="100" Mode="" Description="Group ID for file permissions (typically 100 for users on Unraid)" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="Server Port" Target="CALIBRE_PORT" Default="27020" Mode="" Description="Internal port for Calibre server (should match exposed port)" Type="Variable" Display="advanced" Required="false" Mask="false">27020</Config>
-  <Config Name="Library Path" Target="CALIBRE_LIBRARY_PATH" Default="/library" Mode="" Description="Internal path to library (don't change unless you know what you're doing)" Type="Variable" Display="advanced" Required="false" Mask="false">/library</Config>
-  
   <TailscaleStateDir/>
 </Container>
