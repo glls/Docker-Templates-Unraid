@@ -10,27 +10,37 @@ Below is a list of the Docker templates currently available, along with links to
 
 ### 1. TimescaleDB
 
--   **Description:** TimescaleDB is an open-source time-series SQL database engineered for speed, scale, and reliability. It's packaged as a PostgreSQL extension and is ideal for a wide range of applications, including IoT, monitoring, analytics, and financial data.
--   **Official Website:** [timescale.com](https://www.timescale.com/)
--   **GitHub Repository:** [github.com/timescale/timescaledb](https://github.com/timescale/timescaledb)
--   **Docker Image:** [hub.docker.com/r/timescale/timescaledb](https://hub.docker.com/r/timescale/timescaledb)
+- **Description:** TimescaleDB is an open-source time-series SQL database engineered for speed, scale, and reliability. It's packaged as a PostgreSQL extension and is ideal for a wide range of applications, including IoT, monitoring, analytics, and financial data.
+- **Official Website:** [timescale.com](https://www.timescale.com/)
+- **GitHub Repository:** [github.com/timescale/timescaledb](https://github.com/timescale/timescaledb)
+- **Docker Image:** [hub.docker.com/r/timescale/timescaledb](https://hub.docker.com/r/timescale/timescaledb)
 
 ---
 
 ### 2. TimescaleDB-HA (High Availability)
 
--   **Description:** This template provides a High Availability setup for TimescaleDB, typically utilizing Patroni for automated failover and PostgreSQL's streaming replication. This ensures greater uptime and data redundancy for your time-series data.
--   **Official Documentation (High Availability):** [docs.timescale.com/self-hosted/latest/replication-and-ha/about-ha/](https://docs.timescale.com/self-hosted/latest/replication-and-ha/about-ha/)
--   **Docker Image (includes Patroni):** [hub.docker.com/r/timescale/timescaledb-ha](https://hub.docker.com/r/timescale/timescaledb-ha)
--   **GitHub Repository (for Docker HA setup):** [github.com/timescale/timescaledb-docker-ha](https://github.com/timescale/timescaledb-docker-ha)
+- **Description:** This template provides a High Availability setup for TimescaleDB, typically utilizing Patroni for automated failover and PostgreSQL's streaming replication. This ensures greater uptime and data redundancy for your time-series data.
+- **Official Documentation (High Availability):** [docs.timescale.com/self-hosted/latest/replication-and-ha/about-ha/](https://docs.timescale.com/self-hosted/latest/replication-and-ha/about-ha/)
+- **Docker Image (includes Patroni):** [hub.docker.com/r/timescale/timescaledb-ha](https://hub.docker.com/r/timescale/timescaledb-ha)
+- **GitHub Repository (for Docker HA setup):** [github.com/timescale/timescaledb-docker-ha](https://github.com/timescale/timescaledb-docker-ha)
 
 ---
 
-### 3. go-vod
+### 3. Calibre Server
 
--   **Description:** go-vod is a Extremely minimal on-demand video transcoding server in go.
--   **Documentation:** [https://memories.gallery/hw-transcoding/#overview](https://memories.gallery/hw-transcoding/#overview)
--   **GitHub Repository:** [https://github.com/pulsejet/memories/tree/master/go-vod](https://github.com/pulsejet/memories/tree/master/go-vod)
+- **Description:** Calibre Server is a lightweight, server-only distribution of Calibre that provides web-based access to your ebook library. This image contains only the calibre-server component, making it faster, smaller, and more efficient than full Calibre installations. Perfect for headless server deployments.
+- **Official Website:** [calibre-ebook.com](https://calibre-ebook.com/)
+- **Server Documentation:** [manual.calibre-ebook.com/generated/en/calibre-server.html](https://manual.calibre-ebook.com/generated/en/calibre-server.html)
+- **Docker Image:** [hub.docker.com/r/glls/calibre-server](https://hub.docker.com/r/glls/calibre-server)
+- **Docker Build Files:** See the `docker/` folder for Dockerfile and build scripts
+
+---
+
+### 4. go-vod
+
+- **Description:** go-vod is a Extremely minimal on-demand video transcoding server in go.
+- **Documentation:** [https://memories.gallery/hw-transcoding/#overview](https://memories.gallery/hw-transcoding/#overview)
+- **GitHub Repository:** [https://github.com/pulsejet/memories/tree/master/go-vod](https://github.com/pulsejet/memories/tree/master/go-vod)
 
 ---
 
@@ -42,9 +52,10 @@ If you need to see all the extensions that are available to be installed (or are
 
 **How to run the query:**
 
-1.  Connect to your PostgreSQL/TimescaleDB database using a SQL client (e.g., `psql`, DBeaver, pgAdmin).
-2.  Execute the following command:
+1. Connect to your PostgreSQL/TimescaleDB database using a SQL client (e.g., `psql`, DBeaver, pgAdmin).
+2. Execute the following command:
 
 ```sql
 SELECT name, default_version, installed_version, comment
 FROM pg_available_extensions;
+```

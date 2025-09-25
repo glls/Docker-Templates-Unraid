@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>calibre-server</Name>
+  <Repository>glls/calibre-server:latest</Repository>
+  <Registry>https://hub.docker.com/r/glls/calibre-server</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/glls/Docker-Templates-Unraid/issues</Support>
+  <Project>https://calibre-ebook.com/</Project>
+  <Overview>Calibre Server is a lightweight, server-only distribution of Calibre that provides web-based access to your ebook library. This image contains only the calibre-server component, making it faster, smaller, and more efficient than full Calibre installations.&#xD;
+&#xD;
+Features:&#xD;
+• Web-based ebook library access&#xD;
+• OPDS feed support for reading apps&#xD;
+• Multi-format ebook support (EPUB, MOBI, PDF, etc.)&#xD;
+• Search and browse capabilities&#xD;
+• Download books in various formats&#xD;
+• Lightweight server-only installation&#xD;
+&#xD;
+Configuration:&#xD;
+• Library Path: Directory containing your Calibre library&#xD;
+• Server Port: Web interface access port (default: 27020)&#xD;
+• User/Group ID: For proper file permissions&#xD;
+&#xD;
+Access your library at: http://YOUR-SERVER-IP:27020&#xD;
+</Overview>
+  <Category>MediaServer:Books</Category>
+  <WebUI>http://[IP]:[PORT:27020]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/glls/Docker-Templates-Unraid/refs/heads/main/calibre-server.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/glls/Docker-Templates-Unraid/refs/heads/main/assets/calibre.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText>If you find this template useful, consider supporting the developer</DonateText>
+  <DonateLink>https://www.paypal.me/GeorgeLitos</DonateLink>
+  <Requires/>
+  
+  <!-- Port Configuration -->
+  <Config Name="WebUI Port" Target="27020" Default="27020" Mode="tcp" Description="Port for accessing the Calibre web interface" Type="Port" Display="always" Required="true" Mask="false">27020</Config>
+  
+  <!-- Volume Configuration -->
+  <Config Name="Calibre Library" Target="/library" Default="/mnt/user/Media/Books/Calibre-Library" Mode="rw" Description="Path to your existing Calibre library directory" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/Media/Books/Calibre-Library</Config>
+  
+  <!-- Environment Variables -->
+  <Config Name="PUID" Target="CALIBRE_USER_ID" Default="99" Mode="" Description="User ID for file permissions (typically 99 for nobody on Unraid)" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="CALIBRE_GROUP_ID" Default="100" Mode="" Description="Group ID for file permissions (typically 100 for users on Unraid)" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Server Port" Target="CALIBRE_PORT" Default="27020" Mode="" Description="Internal port for Calibre server (should match exposed port)" Type="Variable" Display="advanced" Required="false" Mask="false">27020</Config>
+  <Config Name="Library Path" Target="CALIBRE_LIBRARY_PATH" Default="/library" Mode="" Description="Internal path to library (don't change unless you know what you're doing)" Type="Variable" Display="advanced" Required="false" Mask="false">/library</Config>
+  
+  <TailscaleStateDir/>
+</Container>
