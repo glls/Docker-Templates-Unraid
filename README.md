@@ -26,11 +26,13 @@ Below is a list of the Docker templates currently available, along with links to
 
 ---
 
-### 4. go-vod (not using it anymore)
+### 4. go-vod
 
 - **Description:** go-vod is a Extremely minimal on-demand video transcoding server in go.
 - **Documentation:** [https://memories.gallery/hw-transcoding/#overview](https://memories.gallery/hw-transcoding/#overview)
 - **GitHub Repository:** [https://github.com/pulsejet/memories/tree/master/go-vod](https://github.com/pulsejet/memories/tree/master/go-vod)
+
+*I'm not not using go-vod anymore, proceed with caution.*
 
 ---
 
